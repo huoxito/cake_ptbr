@@ -52,7 +52,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 			$this-><?php echo $currentModelName; ?>->create();
 			if ($this-><?php echo $currentModelName; ?>->save($this->request->data)) {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlash(sprintf(__('O %s foi salvo.', true), '<?php echo Inflexao::acentos(strtolower($singularHumanName)); ?>'));
+				$this->Session->setFlash(__('O <?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> foi salvo'));
 				$this->redirect(array('action' => 'index'));
 <?php else: ?>
 				$this->flash(sprintf(__('%s salvo.', true), '<?php echo Inflexao::acentos(ucfirst(strtolower($currentModelName))); ?>'), array('action' => 'index'));
@@ -102,7 +102,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 <?php endif; ?>
 			} else {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlash(__('O <?php echo inflexao::acentos(strtolower($singularhumanname)); ?> não pode ser salvo. Por favor, tente novamente.'));
+				$this->Session->setFlash(__('O <?php echo inflexao::acentos(strtolower($singularHumanName)); ?> não pode ser salvo. Por favor, tente novamente.'));
 <?php endif; ?>
 			}
 		} else {
