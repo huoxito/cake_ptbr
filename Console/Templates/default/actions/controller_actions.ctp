@@ -59,7 +59,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 <?php endif; ?>
 			} else {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlash(sprintf(__('O %s não pode ser salvo. Por favor, tente novamente.', true), '<?php echo Inflexao::acentos(strtolower($singularHumanName)); ?>'));
+				$this->Session->setFlash(__('O <?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> não pode ser salvo. Por favor, tente novamente.'));
 <?php endif; ?>
 			}
 		}
@@ -151,7 +151,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 <?php if ($wannaUseSession): ?>
 		$this->Session->setFlash(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> não pode ser excluido'));
 <?php else: ?>
-		$this->flash(sprintf(__('%s não pode ser excluído.', true), '<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?>'), array('action' => 'index'));
+		$this->flash(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> não pode ser excluído.'), array('action' => 'index'));
 <?php endif; ?>
 		$this->redirect(array('action' => 'index'));
 	}
