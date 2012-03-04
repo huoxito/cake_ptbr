@@ -20,13 +20,13 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 ?>
 
 <div class="<?php echo $pluralVar;?> index">
-	<h2><?php echo "<?php __('" . Inflexao::acentos($pluralHumanName) . "');?>";?></h2>
+	<h2><?php echo Inflexao::acentos($pluralHumanName); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 	<?php  foreach ($fields as $field):?>
 		<th><?php echo "<?php echo \$this->Paginator->sort('{$field}');?>";?></th>
 	<?php endforeach;?>
-		<th class="actions"><?php echo "<?php __('Ações');?>";?></th>
+		<th class="actions"><?php echo "<?php echo __('Ações');?>";?></th>
 	</tr>
 	<?php
 	echo "<?php
@@ -77,7 +77,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo "<?php __('Ações'); ?>"; ?></h3>
+	<h3><?php echo "<?php echo __('Ações'); ?>"; ?></h3>
 	<ul>
 		<li><?php echo "<?php echo \$this->Html->link(__('Inserir " . Inflexao::acentos($singularHumanName) . "'), array('action' => 'add')); ?>";?></li>
 <?php
